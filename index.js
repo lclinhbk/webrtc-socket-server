@@ -12,13 +12,13 @@ io.on('connection', socket => {
         if (isExist) return socket.emit('DANG_KY_THAT_BAT');
        
         stt++;
-        //user.stt = stt;
+        user.stt = stt;
         if (stt == 1) {
-            //firstCamId = user.peerId;
-            //firstCamTen = user.ten;
+            firstCamId = user.peerId;
+            firstCamTen = user.ten;
         }
         
-        //user.firstCamId = firstCamId;
+        user.firstCamId = firstCamId;
         
         arrUserInfo.push(user);
         socket.emit('DANH_SACH_ONLINE', arrUserInfo);
