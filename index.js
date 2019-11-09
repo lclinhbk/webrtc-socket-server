@@ -32,9 +32,9 @@ io.on('connection', socket => {
              stt--;
         }
       
-//         if (user.peerId == firstCamId) {
-//             stt = 0;
-//         }
+        if (user.peerId == firstCamId) {
+            stt = 0;
+        }
         io.emit('AI_DO_NGAT_KET_NOI', socket.peerId);
     });
 });
