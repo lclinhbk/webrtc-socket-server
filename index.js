@@ -18,7 +18,7 @@ io.on('connection', socket => {
             firstCamTen = user.ten;
         }
         
-        user.firstCamId = firstCamId;*/
+        user.firstCamId = firstCamId;
         
         arrUserInfo.push(user);
         socket.emit('DANH_SACH_ONLINE', arrUserInfo);
