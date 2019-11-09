@@ -3,6 +3,7 @@ const io = require('socket.io')(process.env.PORT || 3000);
 const arrUserInfo = [];
 const stt = 0;
 const firstCamId = '';
+const firstCamTen = '';
 
 io.on('connection', socket => {
     socket.on('NGUOI_DUNG_DANG_KY', user => {
@@ -14,6 +15,7 @@ io.on('connection', socket => {
         user.stt = stt;
         if (stt == 1) {
             firstCamId = user.peerId;
+            firstCamTen = user.ten;
         }
         
         user.firstCamId = firstCamId;
