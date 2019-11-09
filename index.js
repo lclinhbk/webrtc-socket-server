@@ -1,9 +1,9 @@
 const io = require('socket.io')(process.env.PORT || 3000);
 
 const arrUserInfo = [];
-const stt = 0;
-const firstCamId = '';
-const firstCamTen = '';
+var stt = 0;
+var firstCamId = '';
+var firstCamTen = '';
 
 io.on('connection', socket => {
     socket.on('NGUOI_DUNG_DANG_KY', user => {
@@ -11,7 +11,7 @@ io.on('connection', socket => {
         socket.peerId = user.peerId;
         if (isExist) return socket.emit('DANG_KY_THAT_BAT');
        
-        /*stt++;
+        stt++;
         user.stt = stt;
         if (stt == 1) {
             firstCamId = user.peerId;
@@ -28,13 +28,13 @@ io.on('connection', socket => {
     socket.on('disconnect', () => {
         const index = arrUserInfo.findIndex(user => user.peerId === socket.peerId);
         arrUserInfo.splice(index, 1);
-        /*if (stt > 0) {
+        if (stt > 0) {
              stt--;
         }
       
         if (user.peerId == firstCamId) {
             stt = 0;
-        }*/
+        }
         io.emit('AI_DO_NGAT_KET_NOI', socket.peerId);
     });
 });
