@@ -41,6 +41,7 @@ io.on('connection', socket => {
          if (socket.peerId == firstCamId) {
              fixStt = stt + 1;
              stt = 0;
+             console.log("ERRORfshjfsdfhdjfdfd");
         }
         io.emit('AI_DO_NGAT_KET_NOI', socket.peerId);
     });
