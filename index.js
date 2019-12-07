@@ -19,7 +19,7 @@ io.on('connection', socket => {
             firstCamId = user.peerId;
             firstCamTen = user.ten;
             //user.stt = stt;
-            if (!fixStt) {
+            if (fixStt) {
                 stt = fixStt;
                 console.log("stt fixed", stt);
             }
