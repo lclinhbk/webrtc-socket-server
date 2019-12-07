@@ -4,6 +4,7 @@ const arrUserInfo = [];
 var stt = 0;
 var firstCamId = '';
 var firstCamTen = '';
+var fixStt = 0;
 
 io.on('connection', socket => {
     socket.on('NGUOI_DUNG_DANG_KY', user => {
@@ -16,6 +17,9 @@ io.on('connection', socket => {
         if (stt == 1) {
             firstCamId = user.peerId;
             firstCamTen = user.ten;
+            if (!fixStt) {
+                stt = fixStt;
+            }
         }
         
         user.firstCamId = firstCamId;
@@ -33,6 +37,7 @@ io.on('connection', socket => {
         }
       
          if (socket.peerId == firstCamId) {
+             fixStt = stt + 1;
              stt = 0;
         }
         io.emit('AI_DO_NGAT_KET_NOI', socket.peerId);
