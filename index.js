@@ -42,6 +42,7 @@ io.on('connection', socket => {
         }
       
          if (socket.peerId == firstCamId) {
+             fixStt = 0;
              fixStt = stt + 1;
              stt = 0;
              console.log("ERRORfshjfsdfhdjfdfd");
