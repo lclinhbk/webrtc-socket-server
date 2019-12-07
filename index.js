@@ -13,14 +13,16 @@ io.on('connection', socket => {
         if (isExist) return socket.emit('DANG_KY_THAT_BAT');
        
         stt++;
+        user.stt = stt;
         if (stt == 1) {
             firstCamId = user.peerId;
             firstCamTen = user.ten;
+            //user.stt = stt;
             if (!fixStt) {
                 stt = fixStt;
             }
         }
-        user.stt = stt;
+        
         
         user.firstCamId = firstCamId;
         
