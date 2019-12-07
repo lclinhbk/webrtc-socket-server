@@ -13,6 +13,7 @@ io.on('connection', socket => {
         if (isExist) return socket.emit('DANG_KY_THAT_BAT');
        
         stt++;
+        console.log("stt connect:", stt);
         user.stt = stt;
         if (stt == 1) {
             firstCamId = user.peerId;
@@ -20,6 +21,7 @@ io.on('connection', socket => {
             //user.stt = stt;
             if (!fixStt) {
                 stt = fixStt;
+                console.log("stt fixed", stt);
             }
         }
         
