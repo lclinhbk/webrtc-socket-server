@@ -36,7 +36,7 @@ io.on('connection', socket => {
     socket.on('disconnect', () => {
         const index = arrUserInfo.findIndex(user => user.peerId === socket.peerId);
         arrUserInfo.splice(index, 1);
-        fixStt = 0;
+//         fixStt = 0;
         if (stt > 0) {
              stt--;
         }
