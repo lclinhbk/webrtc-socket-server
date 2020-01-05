@@ -40,13 +40,15 @@ io.on('connection', socket => {
         if (stt > 0) {
              stt--;
         }
-        if (stt == 0) {
+        if (stt <= 0) {
             fixStt = 0;
         }
       
          if (socket.peerId == firstCamId) {
              fixStt = 0;
-             fixStt = stt + 1;
+             if(!(stt == 0)) {
+                 fixStt = stt + 1;
+             }
              stt = 0;
              console.log("ERRORfshjfsdfhdjfdfd");
         }
